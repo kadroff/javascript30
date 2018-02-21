@@ -62,13 +62,25 @@
   </style>
   <script>
     const secondQuery = document.querySelector(".second-hand");
+    const minuteQuery = document.querySelector(".min-hand");
+    const hourQuery = document.querySelector(".hour-hand");
 
     function setDate() {
       const now = new Date();
+      // Seconds
       const second = now.getSeconds();
       const secondDegree = ((second / 60) * 360) + 90;
       secondQuery.style.transform = `rotate(${secondDegree}deg)`;
-      console.log(second);
+
+      // Minutes
+      const minute = now.getMinutes();
+      const minuteDegree = ((minute / 60) * 360) + 90;
+      minuteQuery.style.transform = `rotate(${minuteDegree}deg)`;
+
+      // Hours 
+      const hour = now.getHours();
+      const hourDegree = ((hour / 60) * 360) + 90;
+      hourQuery.style.transform = `rotate(${hourDegree}deg)`;
     }
 
     setInterval(setDate, 1000);
