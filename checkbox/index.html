@@ -89,8 +89,13 @@
 <script>
   const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
 
+  let lastChecked; 
+
   function handleCheck(e) {
-    console.log(e)
+  // Если нажата кнпока shift
+    if (e.shiftKey && this.checked) {
+
+    }
   }
 
 
