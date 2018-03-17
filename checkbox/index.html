@@ -94,8 +94,19 @@
   function handleCheck(e) {
   // Если нажата кнпока shift
     if (e.shiftKey && this.checked) {
+      inBetween = false;
+      checkboxes.forEach(checkbox => {
+        if (checkbox === this || checkbox === lastChecked) {
+          inBetween = !inBetween;
+          console.log("Check");
+        }
 
+        if(inBetween) {
+          checkbox.checked = true;
+        }
+      });
     }
+
   }
 
 
